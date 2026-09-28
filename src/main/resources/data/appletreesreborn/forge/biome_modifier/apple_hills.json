@@ -1,0 +1,12 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:windswept_forest",
+    "minecraft:windswept_hills",
+    "minecraft:meadow"
+  ],
+  "features": [
+    "appletreesreborn:apple_trees_hills"
+  ],
+  "step": "vegetal_decoration"
+}

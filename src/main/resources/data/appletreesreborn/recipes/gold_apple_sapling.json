@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "conditions": [
+    {
+      "type": "appletreesreborn:config_enabled",
+      "key": "craftGoldAppleSapling"
+    }
+  ],
+  "pattern": [
+    "III",
+    "ISI",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "minecraft:gold_ingot"
+    },
+    "S": {
+      "item": "appletreesreborn:apple_sapling"
+    }
+  },
+  "result": {
+    "item": "appletreesreborn:gold_apple_sapling"
+  }
+}

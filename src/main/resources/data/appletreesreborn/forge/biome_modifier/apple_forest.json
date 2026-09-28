@@ -1,0 +1,13 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:forest",
+    "minecraft:dark_forest",
+    "minecraft:flower_forest",
+    "minecraft:birch_forest"
+  ],
+  "features": [
+    "appletreesreborn:apple_trees_forest"
+  ],
+  "step": "vegetal_decoration"
+}

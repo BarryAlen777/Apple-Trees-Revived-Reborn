@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "stage=0": {
+      "model": "appletreesreborn:block/gold_apple_sapling"
+    },
+    "stage=1": {
+      "model": "appletreesreborn:block/gold_apple_sapling"
+    }
+  }
+}

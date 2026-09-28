@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:plains",
+    "minecraft:sunflower_plains"
+  ],
+  "features": [
+    "appletreesreborn:apple_trees_plains"
+  ],
+  "step": "vegetal_decoration"
+}

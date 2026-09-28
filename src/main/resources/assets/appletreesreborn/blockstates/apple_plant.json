@@ -1,0 +1,28 @@
+{
+  "variants": {
+    "age=0": {
+      "model": "appletreesreborn:block/apple_stage_0"
+    },
+    "age=1": {
+      "model": "appletreesreborn:block/apple_stage_1"
+    },
+    "age=2": {
+      "model": "appletreesreborn:block/apple_stage_2"
+    },
+    "age=3": {
+      "model": "appletreesreborn:block/apple_stage_3"
+    },
+    "age=4": {
+      "model": "appletreesreborn:block/apple_stage_4"
+    },
+    "age=5": {
+      "model": "appletreesreborn:block/apple_stage_5"
+    },
+    "age=6": {
+      "model": "appletreesreborn:block/apple_stage_6"
+    },
+    "age=7": {
+      "model": "appletreesreborn:block/apple_stage_7"
+    }
+  }
+}
