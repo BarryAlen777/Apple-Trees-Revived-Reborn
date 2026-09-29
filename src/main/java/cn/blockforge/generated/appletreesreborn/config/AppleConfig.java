@@ -42,6 +42,7 @@ public final class AppleConfig {
     // ---- 配方 ----
     public static final BooleanValue CRAFT_APPLE_SAPLING;
     public static final BooleanValue CRAFT_GOLD_APPLE_SAPLING;
+    public static final BooleanValue CRAFT_EMERALD_SAPLING;
     public static final BooleanValue CRAFT_NOTCH_APPLE;
 
     /** 配方 JSON 里引用的开关，键名要和 data/.../recipes 里的 key 一致。 */
@@ -101,6 +102,8 @@ public final class AppleConfig {
                 .define("craftAppleSapling", true);
         CRAFT_GOLD_APPLE_SAPLING = b.comment("启用配方：金锭围绕苹果树苗 = 金苹果树苗。")
                 .define("craftGoldAppleSapling", true);
+        CRAFT_EMERALD_SAPLING = b.comment("启用配方：绿宝石块围绕金苹果树苗 = 翡翠苹果树苗。")
+                .define("craftEmeraldSapling", true);
         CRAFT_NOTCH_APPLE = b.comment("启用配方：金块围绕苹果 = 附魔金苹果。",
                         "默认开启，关掉之后这个配方就不会被数据包加载。",
                         "注意：配方是在进入世界／重载数据包时读取的，改完这个开关要退出重进世界（或按 F3+T）才生效。")
@@ -112,6 +115,7 @@ public final class AppleConfig {
         // 必须在所有配置值创建之后登记，条件求值时从这里取开关。
         CONDITION_KEYS.put("craftAppleSapling", CRAFT_APPLE_SAPLING);
         CONDITION_KEYS.put("craftGoldAppleSapling", CRAFT_GOLD_APPLE_SAPLING);
+        CONDITION_KEYS.put("craftEmeraldSapling", CRAFT_EMERALD_SAPLING);
         CONDITION_KEYS.put("craftNotchApple", CRAFT_NOTCH_APPLE);
     }
 

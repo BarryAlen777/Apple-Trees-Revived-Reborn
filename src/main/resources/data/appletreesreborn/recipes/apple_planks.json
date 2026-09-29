@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "tag": "appletreesreborn:apple_logs"
+    }
+  ],
+  "result": {
+    "item": "appletreesreborn:apple_planks",
+    "count": 4
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"end": "appletreesreborn:block/apple_log_top",
+		"side": "appletreesreborn:block/apple_log"
+	}
+}

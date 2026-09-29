@@ -1,0 +1,7 @@
+{
+	"parent": "block/cube_column",
+	"textures": {
+		"end": "appletreesreborn:block/stripped_apple_log",
+		"side": "appletreesreborn:block/stripped_apple_log"
+	}
+}

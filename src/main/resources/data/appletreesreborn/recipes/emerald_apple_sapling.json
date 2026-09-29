@@ -1,0 +1,26 @@
+{
+  "conditions": [
+    {
+      "type": "appletreesreborn:config_enabled",
+      "key": "craftEmeraldSapling"
+    }
+  ],
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "S": {
+      "item": "appletreesreborn:gold_apple_sapling"
+    },
+    "E": {
+      "item": "minecraft:emerald_block"
+    }
+  },
+  "pattern": [
+    "EEE",
+    "ESE",
+    "EEE"
+  ],
+  "result": {
+    "item": "appletreesreborn:emerald_apple_sapling"
+  }
+}

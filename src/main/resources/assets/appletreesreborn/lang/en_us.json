@@ -1,6 +1,25 @@
 {
   "block.appletreesreborn.apple_sapling": "Apple Sapling",
   "block.appletreesreborn.gold_apple_sapling": "Golden Apple Sapling",
+  "block.appletreesreborn.emerald_apple_sapling": "Emerald Apple Tree Sapling",
   "block.appletreesreborn.apple_plant": "Apple",
-  "block.appletreesreborn.gold_apple_plant": "Golden Apple"
+  "block.appletreesreborn.gold_apple_plant": "Golden Apple",
+  "block.appletreesreborn.emerald_apple_plant": "Emerald Apple",
+  "block.appletreesreborn.apple_leaves": "Apple Tree Leaves",
+  "block.appletreesreborn.apple_log": "Apple Tree Log",
+  "block.appletreesreborn.stripped_apple_log": "Stripped Apple Tree Log",
+  "block.appletreesreborn.apple_wood": "Apple Tree Wood",
+  "block.appletreesreborn.stripped_apple_wood": "Stripped Apple Tree Wood",
+  "block.appletreesreborn.apple_planks": "Apple Tree Planks",
+  "block.appletreesreborn.apple_slab": "Apple Tree Slab",
+  "block.appletreesreborn.petrified_apple_slab": "Petrified Apple Tree Slab",
+  "block.appletreesreborn.apple_stairs": "Apple Tree Stairs",
+  "block.appletreesreborn.apple_door": "Apple Tree Door",
+  "block.appletreesreborn.apple_fence": "Apple Tree Fence",
+  "block.appletreesreborn.apple_fence_gate": "Apple Tree Fence Gate",
+  "block.appletreesreborn.apple_button": "Apple Tree Button",
+  "block.appletreesreborn.apple_pressure_plate": "Apple Tree Pressure Plate",
+  "block.appletreesreborn.apple_trapdoor": "Apple Tree Trapdoor",
+  "item.appletreesreborn.emerald_apple": "Emerald Apple",
+  "itemGroup.appletreesreborn.apple_tab": "Apple Trees Revived"
 }

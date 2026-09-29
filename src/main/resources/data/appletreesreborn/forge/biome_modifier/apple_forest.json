@@ -7,7 +7,8 @@
     "minecraft:birch_forest"
   ],
   "features": [
-    "appletreesreborn:apple_trees_forest"
+    "appletreesreborn:apple_trees_forest",
+    "appletreesreborn:emerald_trees_forest"
   ],
   "step": "vegetal_decoration"
 }

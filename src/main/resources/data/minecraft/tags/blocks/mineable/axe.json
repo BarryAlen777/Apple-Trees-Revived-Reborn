@@ -1,0 +1,18 @@
+{
+  "replace": false,
+  "values": [
+    "appletreesreborn:apple_log",
+    "appletreesreborn:stripped_apple_log",
+    "appletreesreborn:apple_wood",
+    "appletreesreborn:stripped_apple_wood",
+    "appletreesreborn:apple_planks",
+    "appletreesreborn:apple_slab",
+    "appletreesreborn:apple_stairs",
+    "appletreesreborn:apple_fence",
+    "appletreesreborn:apple_fence_gate",
+    "appletreesreborn:apple_door",
+    "appletreesreborn:apple_trapdoor",
+    "appletreesreborn:apple_button",
+    "appletreesreborn:apple_pressure_plate"
+  ]
+}

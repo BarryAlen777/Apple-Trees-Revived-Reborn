@@ -1,6 +1,25 @@
 {
   "block.appletreesreborn.apple_sapling": "苹果树苗",
   "block.appletreesreborn.gold_apple_sapling": "金苹果树苗",
+  "block.appletreesreborn.emerald_apple_sapling": "翡翠苹果树苗",
   "block.appletreesreborn.apple_plant": "苹果",
-  "block.appletreesreborn.gold_apple_plant": "金苹果"
+  "block.appletreesreborn.gold_apple_plant": "金苹果",
+  "block.appletreesreborn.emerald_apple_plant": "翡翠苹果",
+  "block.appletreesreborn.apple_leaves": "苹果树叶",
+  "block.appletreesreborn.apple_log": "苹果原木",
+  "block.appletreesreborn.stripped_apple_log": "去皮苹果原木",
+  "block.appletreesreborn.apple_wood": "苹果树木",
+  "block.appletreesreborn.stripped_apple_wood": "去皮苹果树木",
+  "block.appletreesreborn.apple_planks": "苹果木板",
+  "block.appletreesreborn.apple_slab": "苹果木台阶",
+  "block.appletreesreborn.petrified_apple_slab": "石化苹果木台阶",
+  "block.appletreesreborn.apple_stairs": "苹果木楼梯",
+  "block.appletreesreborn.apple_door": "苹果木门",
+  "block.appletreesreborn.apple_fence": "苹果木栅栏",
+  "block.appletreesreborn.apple_fence_gate": "苹果木栅栏门",
+  "block.appletreesreborn.apple_button": "苹果木按钮",
+  "block.appletreesreborn.apple_pressure_plate": "苹果木压力板",
+  "block.appletreesreborn.apple_trapdoor": "苹果木活板门",
+  "item.appletreesreborn.emerald_apple": "翡翠苹果",
+  "itemGroup.appletreesreborn.apple_tab": "苹果树复兴"
 }

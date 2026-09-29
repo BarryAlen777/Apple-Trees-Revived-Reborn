@@ -1,0 +1,8 @@
+{
+	"parent": "block/slab",
+	"textures": {
+		"bottom": "appletreesreborn:block/apple_planks",
+		"top": "appletreesreborn:block/apple_planks",
+		"side": "appletreesreborn:block/apple_planks"
+	}
+}

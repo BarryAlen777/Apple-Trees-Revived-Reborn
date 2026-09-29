@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"axis=y": { "model": "appletreesreborn:block/stripped_apple_wood" },
+		"axis=z": { "model": "appletreesreborn:block/stripped_apple_wood", "x": 90 },
+		"axis=x": { "model": "appletreesreborn:block/stripped_apple_wood", "x": 90, "y": 90 }
+	}
+}

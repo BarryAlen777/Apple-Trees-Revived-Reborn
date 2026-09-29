@@ -1,0 +1,7 @@
+{
+	"variants": {
+		"type=bottom": { "model": "appletreesreborn:block/apple_slab" },
+		"type=top": { "model": "appletreesreborn:block/apple_slab_top" },
+		"type=double": { "model": "appletreesreborn:block/apple_planks" }
+	}
+}

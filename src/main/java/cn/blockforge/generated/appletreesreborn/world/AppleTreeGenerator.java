@@ -27,16 +27,27 @@ import java.util.Set;
 
 /**
  * 苹果树的生成算法，移植自 1.12.2 的 AppleTreeGen / BigAppleTreeGen。
- * 树干和树叶用原版橡木（和原模组一致），果实是模组自己的苹果方块。
+ * 树干用模组自己的苹果原木、树叶用苹果树叶（和 1.19.4 参考版一致），
+ * 这样砍下来才进得去苹果木那套木材体系；果实是模组自己的苹果方块。
  */
 public final class AppleTreeGenerator {
 
-    private static final BlockState LOG = Blocks.OAK_LOG.defaultBlockState();
     /**
-     * 普通（非永久）橡木树叶。原版只要树叶的 distance 变成 7 就会自然消失，
+     * 树干：模组自己的苹果原木（1.19.4 参考版同款）——砍下来的是苹果木，
+     * 才能进那一整套木材体系（木板、门、台阶……）。注册表此时必然已完成，
+     * 这里只在种树时惰性取。
+     */
+    private static BlockState log() {
+        return ModBlocks.APPLE_LOG.get().defaultBlockState();
+    }
+
+    /**
+     * 树叶：苹果树叶。原版只要树叶的 distance 变成 7 就会自然消失，
      * 所以树干被砍掉后树叶会跟着掉，不会一直挂在天上。
      */
-    private static final BlockState LEAVES = Blocks.OAK_LEAVES.defaultBlockState();
+    private static BlockState leaves() {
+        return ModBlocks.APPLE_LEAVES.get().defaultBlockState();
+    }
 
     private AppleTreeGenerator() {
     }
@@ -76,7 +87,7 @@ public final class AppleTreeGenerator {
             if (!canHoldTrunk(level.getBlockState(p))) {
                 return; // 碰到树干或者地面，已经接上了
             }
-            set(level, p, LOG, worldGen);
+            set(level, p, log(), worldGen);
             p = p.below();
         }
     }
@@ -124,7 +135,7 @@ public final class AppleTreeGenerator {
                 continue; // 这一格后来被树干占了，别覆盖回去
             }
             int d = Math.min(7, distance.getOrDefault(p, 7));
-            set(level, p, LEAVES.setValue(LeavesBlock.DISTANCE, d), worldGen);
+            set(level, p, leaves().setValue(LeavesBlock.DISTANCE, d), worldGen);
         }
     }
 
@@ -280,7 +291,7 @@ public final class AppleTreeGenerator {
                         BlockPos leafPos = new BlockPos(i3, i2, k1);
                         BlockState existing = level.getBlockState(leafPos);
                         if (replaceable(existing)) {
-                            set(level, leafPos, LEAVES, worldGen);
+                            set(level, leafPos, leaves(), worldGen);
                             placedLeaves.add(leafPos);
                         }
                     }
@@ -294,7 +305,7 @@ public final class AppleTreeGenerator {
             BlockPos trunkPos = pos.above(j2);
             BlockState existing = level.getBlockState(trunkPos);
             if (canHoldTrunk(existing)) {
-                set(level, trunkPos, LOG, worldGen);
+                set(level, trunkPos, log(), worldGen);
             }
         }
 
@@ -454,7 +465,7 @@ public final class AppleTreeGenerator {
                         BlockState state = this.level.getBlockState(p);
                         if (AppleTreeGenerator.replaceable(state)) {
                             this.leavesPos.add(p);
-                            this.setBlock(p, LEAVES);
+                            this.setBlock(p, leaves());
                         }
                     }
                 }
@@ -502,7 +513,7 @@ public final class AppleTreeGenerator {
                 BlockPos p = initPos.offset(Mth.floor(0.5F + (float) j * f),
                         Mth.floor(0.5F + (float) j * f1), Mth.floor(0.5F + (float) j * f2));
                 Direction.Axis axis = getLogAxis(initPos, p);
-                this.setBlock(p, LOG.setValue(RotatedPillarBlock.AXIS, axis));
+                this.setBlock(p, log().setValue(RotatedPillarBlock.AXIS, axis));
             }
         }
 

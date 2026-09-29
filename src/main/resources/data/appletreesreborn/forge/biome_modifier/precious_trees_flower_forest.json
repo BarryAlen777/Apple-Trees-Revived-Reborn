@@ -1,0 +1,11 @@
+{
+  "type": "forge:add_features",
+  "biomes": [
+    "minecraft:flower_forest"
+  ],
+  "features": [
+    "appletreesreborn:emerald_trees_flower_forest",
+    "appletreesreborn:golden_trees_flower_forest"
+  ],
+  "step": "vegetal_decoration"
+}
