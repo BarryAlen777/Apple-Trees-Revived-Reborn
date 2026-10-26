@@ -1,8 +1,16 @@
 package cn.blockforge.generated.appletreesreborn.registry;
 
 import cn.blockforge.generated.appletreesreborn.AppleTreesMod;
+import cn.blockforge.generated.appletreesreborn.block.AppleFenceBlock;
+import cn.blockforge.generated.appletreesreborn.block.AppleFenceGateBlock;
+import cn.blockforge.generated.appletreesreborn.block.AppleLeavesBlock;
 import cn.blockforge.generated.appletreesreborn.block.ApplePlantBlock;
+import cn.blockforge.generated.appletreesreborn.block.ApplePlanksBlock;
 import cn.blockforge.generated.appletreesreborn.block.AppleSaplingBlock;
+import cn.blockforge.generated.appletreesreborn.block.AppleSlabBlock;
+import cn.blockforge.generated.appletreesreborn.block.AppleStairsBlock;
+import cn.blockforge.generated.appletreesreborn.block.AppleStrippableLogBlock;
+import cn.blockforge.generated.appletreesreborn.block.AppleStrippedBlock;
 import cn.blockforge.generated.appletreesreborn.world.FruitType;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
@@ -15,13 +23,8 @@ import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.ButtonBlock;
 import net.minecraft.world.level.block.DoorBlock;
-import net.minecraft.world.level.block.FenceBlock;
-import net.minecraft.world.level.block.FenceGateBlock;
-import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.PressurePlateBlock;
-import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.StairBlock;
 import net.minecraft.world.level.block.TrapDoorBlock;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
@@ -65,14 +68,15 @@ public final class ModBlocks {
             () -> new ApplePlantBlock(FruitType.EMERALD, plantProperties()));
 
     // ------------------------------------------------------------------
-    // 翡翠苹果（v2.1 新果实）：吃下给幸运 + 急迫，参考 1.19.4 的数值
+    // 翡翠苹果（v2.1 新果实）：吃下给幸运 3 分钟 + 速度 80 秒 + 夜视 3 分钟
     // ------------------------------------------------------------------
 
     private static final FoodProperties EMERALD_APPLE_FOOD = new FoodProperties.Builder()
             .nutrition(4)
             .saturationMod(1.2F)
             .effect(() -> new MobEffectInstance(MobEffects.LUCK, 3600, 0), 1.0F)
-            .effect(() -> new MobEffectInstance(MobEffects.DIG_SPEED, 1600, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 1600, 0), 1.0F)
+            .effect(() -> new MobEffectInstance(MobEffects.NIGHT_VISION, 3600, 0), 1.0F)
             .alwaysEat()
             .build();
 
@@ -86,28 +90,31 @@ public final class ModBlocks {
     // ------------------------------------------------------------------
 
     public static final RegistryObject<Block> APPLE_LEAVES = BLOCKS.register("apple_leaves",
-            () -> new LeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+            () -> new AppleLeavesBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LEAVES)));
+    // 原木和树木走 AppleStrippableLogBlock，斧头右键才会变成对应的去皮方块。
     public static final RegistryObject<Block> APPLE_LOG = BLOCKS.register("apple_log",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG)));
+            () -> new AppleStrippableLogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_LOG),
+                    () -> ModBlocks.STRIPPED_APPLE_LOG.get()));
     public static final RegistryObject<Block> STRIPPED_APPLE_LOG = BLOCKS.register("stripped_apple_log",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
+            () -> new AppleStrippedBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_LOG)));
     public static final RegistryObject<Block> APPLE_WOOD = BLOCKS.register("apple_wood",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD)));
+            () -> new AppleStrippableLogBlock(BlockBehaviour.Properties.copy(Blocks.OAK_WOOD),
+                    () -> ModBlocks.STRIPPED_APPLE_WOOD.get()));
     public static final RegistryObject<Block> STRIPPED_APPLE_WOOD = BLOCKS.register("stripped_apple_wood",
-            () -> new RotatedPillarBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
+            () -> new AppleStrippedBlock(BlockBehaviour.Properties.copy(Blocks.STRIPPED_OAK_WOOD)));
     public static final RegistryObject<Block> APPLE_PLANKS = BLOCKS.register("apple_planks",
-            () -> new Block(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
+            () -> new ApplePlanksBlock(BlockBehaviour.Properties.copy(Blocks.OAK_PLANKS)));
     public static final RegistryObject<Block> APPLE_STAIRS = BLOCKS.register("apple_stairs",
-            () -> new StairBlock(() -> APPLE_PLANKS.get().defaultBlockState(),
+            () -> new AppleStairsBlock(() -> APPLE_PLANKS.get().defaultBlockState(),
                     BlockBehaviour.Properties.copy(Blocks.OAK_STAIRS)));
     public static final RegistryObject<Block> APPLE_SLAB = BLOCKS.register("apple_slab",
-            () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
+            () -> new AppleSlabBlock(BlockBehaviour.Properties.copy(Blocks.OAK_SLAB)));
     public static final RegistryObject<Block> PETRIFIED_APPLE_SLAB = BLOCKS.register("petrified_apple_slab",
             () -> new SlabBlock(BlockBehaviour.Properties.copy(Blocks.PETRIFIED_OAK_SLAB)));
     public static final RegistryObject<Block> APPLE_FENCE = BLOCKS.register("apple_fence",
-            () -> new FenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
+            () -> new AppleFenceBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE)));
     public static final RegistryObject<Block> APPLE_FENCE_GATE = BLOCKS.register("apple_fence_gate",
-            () -> new FenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE),
+            () -> new AppleFenceGateBlock(BlockBehaviour.Properties.copy(Blocks.OAK_FENCE_GATE),
                     WoodType.OAK));
     public static final RegistryObject<Block> APPLE_DOOR = BLOCKS.register("apple_door",
             () -> new DoorBlock(BlockBehaviour.Properties.copy(Blocks.OAK_DOOR), BlockSetType.OAK));

@@ -21,5 +21,13 @@
   "block.appletreesreborn.apple_pressure_plate": "苹果木压力板",
   "block.appletreesreborn.apple_trapdoor": "苹果木活板门",
   "item.appletreesreborn.emerald_apple": "翡翠苹果",
-  "itemGroup.appletreesreborn.apple_tab": "苹果树复兴"
+  "itemGroup.appletreesreborn.apple_tab": "苹果树复兴",
+  "advancements.appletreesreborn.apple_tree.root.title": "苹果树",
+  "advancements.appletreesreborn.apple_tree.root.description": "收集苹果树的果实与树苗",
+  "advancements.appletreesreborn.apple_tree.plant_golden_apple.title": "种植金苹果",
+  "advancements.appletreesreborn.apple_tree.plant_golden_apple.description": "获得金苹果树苗",
+  "advancements.appletreesreborn.apple_tree.plant_emerald_apple.title": "种植翡翠",
+  "advancements.appletreesreborn.apple_tree.plant_emerald_apple.description": "获得翡翠苹果树苗",
+  "advancements.appletreesreborn.apple_tree.eat_emerald_apple.title": "翡翠！好吃",
+  "advancements.appletreesreborn.apple_tree.eat_emerald_apple.description": "获得翡翠苹果"
 }

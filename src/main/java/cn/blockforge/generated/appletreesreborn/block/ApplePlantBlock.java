@@ -117,7 +117,7 @@ public class ApplePlantBlock extends Block implements BonemealableBlock {
         }
     }
 
-    /** 1.12.2 getGrowthChance 的 1:1 移植。 */
+    /** 参考 1.12.2 作物生长概率的思路移植：周围越敞亮长得越快，被挡住就减半。 */
     private static float growthChance(Level level, BlockPos pos) {
         float f = 2.0F;
         for (int i = -1; i <= 1; ++i) {
@@ -139,7 +139,7 @@ public class ApplePlantBlock extends Block implements BonemealableBlock {
         } else {
             boolean flag2 = isNotLeavesOrAir(level, pos.west().north())
                     || isNotLeavesOrAir(level, pos.east().north())
-                    || isNotLeavesOrAir(level, pos.north().south())
+                    || isNotLeavesOrAir(level, pos.east().south())
                     || isNotLeavesOrAir(level, pos.west().south());
             if (flag2) {
                 f /= 2.0F;

@@ -21,5 +21,13 @@
   "block.appletreesreborn.apple_pressure_plate": "Apple Tree Pressure Plate",
   "block.appletreesreborn.apple_trapdoor": "Apple Tree Trapdoor",
   "item.appletreesreborn.emerald_apple": "Emerald Apple",
-  "itemGroup.appletreesreborn.apple_tab": "Apple Trees Revived"
+  "itemGroup.appletreesreborn.apple_tab": "Apple Trees Revived",
+  "advancements.appletreesreborn.apple_tree.root.title": "Apple Trees",
+  "advancements.appletreesreborn.apple_tree.root.description": "Collect apples and saplings from apple trees",
+  "advancements.appletreesreborn.apple_tree.plant_golden_apple.title": "Plant a Golden Apple",
+  "advancements.appletreesreborn.apple_tree.plant_golden_apple.description": "Obtain a Golden Apple Sapling",
+  "advancements.appletreesreborn.apple_tree.plant_emerald_apple.title": "Plant an Emerald",
+  "advancements.appletreesreborn.apple_tree.plant_emerald_apple.description": "Obtain an Emerald Apple Sapling",
+  "advancements.appletreesreborn.apple_tree.eat_emerald_apple.title": "Emerald! Delicious",
+  "advancements.appletreesreborn.apple_tree.eat_emerald_apple.description": "Obtain an Emerald Apple"
 }

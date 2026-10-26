@@ -1,0 +1,38 @@
+{
+  "parent": "appletreesreborn:apple_tree/root",
+  "criteria": {
+    "get_gold_apple_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "appletreesreborn:gold_apple_sapling"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.appletreesreborn.apple_tree.plant_golden_apple.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "appletreesreborn:gold_apple_sapling"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.appletreesreborn.apple_tree.plant_golden_apple.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_gold_apple_sapling"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

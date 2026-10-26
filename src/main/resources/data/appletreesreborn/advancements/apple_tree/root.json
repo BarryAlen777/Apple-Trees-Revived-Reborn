@@ -1,0 +1,30 @@
+{
+  "criteria": {
+    "unlock_right_away": {
+      "conditions": {},
+      "trigger": "minecraft:tick"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "appletreesreborn:textures/block/apple_planks.png",
+    "description": {
+      "translate": "advancements.appletreesreborn.apple_tree.root.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "appletreesreborn:apple_sapling"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.appletreesreborn.apple_tree.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "unlock_right_away"
+    ]
+  ],
+  "sends_telemetry_event": false
+}

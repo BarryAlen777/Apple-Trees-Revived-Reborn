@@ -1,0 +1,38 @@
+{
+  "parent": "appletreesreborn:apple_tree/root",
+  "criteria": {
+    "get_emerald_apple_sapling": {
+      "conditions": {
+        "items": [
+          {
+            "items": [
+              "appletreesreborn:emerald_apple_sapling"
+            ]
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "announce_to_chat": true,
+    "description": {
+      "translate": "advancements.appletreesreborn.apple_tree.plant_emerald_apple.description"
+    },
+    "frame": "task",
+    "hidden": false,
+    "icon": {
+      "item": "appletreesreborn:emerald_apple_sapling"
+    },
+    "show_toast": true,
+    "title": {
+      "translate": "advancements.appletreesreborn.apple_tree.plant_emerald_apple.title"
+    }
+  },
+  "requirements": [
+    [
+      "get_emerald_apple_sapling"
+    ]
+  ],
+  "sends_telemetry_event": false
+}
