@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "appletreesreborn:apple_planks"
+    },
+    "R": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "RPR",
+    "RPR"
+  ],
+  "result": {
+    "id": "appletreesreborn:apple_fence_gate"
+  }
+}

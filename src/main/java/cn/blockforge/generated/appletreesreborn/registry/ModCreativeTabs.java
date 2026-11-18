@@ -5,12 +5,12 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
-import net.minecraftforge.eventbus.api.IEventBus;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.RegistryObject;
+import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.registries.DeferredHolder;
+import net.neoforged.neoforge.registries.DeferredRegister;
 
 /**
- * 独立创造模式标签页：对齐 1.19.4 原版（Apple Trees Revived 自带 apple_tab），
+ * 独立创造模式标签页：对齐原版的 apple_tab，
  * 模组全部物品集中放在自己的页签里，顺序也照原版的展示顺序排。
  * 图标用苹果树苗，和原版一致。
  */
@@ -19,7 +19,7 @@ public final class ModCreativeTabs {
     public static final DeferredRegister<CreativeModeTab> TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, AppleTreesMod.MOD_ID);
 
-    public static final RegistryObject<CreativeModeTab> APPLE_TAB = TABS.register("apple_tab",
+    public static final DeferredHolder<CreativeModeTab, CreativeModeTab> APPLE_TAB = TABS.register("apple_tab",
             () -> CreativeModeTab.builder()
                     .title(Component.translatable("itemGroup.appletreesreborn.apple_tab"))
                     .icon(() -> new ItemStack(ModBlocks.APPLE_SAPLING_ITEM.get()))

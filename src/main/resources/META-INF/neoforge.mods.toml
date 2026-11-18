@@ -1,0 +1,22 @@
+modLoader="javafml"
+loaderVersion="${loader_version_range}"
+license="${mod_license}"
+logoFile="logo.png"
+[[mods]]
+modId="${mod_id}"
+version="${mod_version}"
+displayName="${mod_name}"
+authors="BarryAlen777 · AutoMods"
+description='''苹果树：再复生 —— 苹果树玩法（树苗、挂果、金苹果、翡翠苹果、世界生成）移植到 NeoForge 1.21.1。'''
+[[dependencies.${mod_id}]]
+modId="neoforge"
+type="required"
+versionRange="[21.1,)"
+ordering="NONE"
+side="BOTH"
+[[dependencies.${mod_id}]]
+modId="minecraft"
+type="required"
+versionRange="${minecraft_version_range}"
+ordering="NONE"
+side="BOTH"

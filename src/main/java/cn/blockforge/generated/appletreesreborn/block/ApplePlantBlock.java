@@ -2,6 +2,7 @@ package cn.blockforge.generated.appletreesreborn.block;
 
 import cn.blockforge.generated.appletreesreborn.config.AppleConfig;
 import cn.blockforge.generated.appletreesreborn.world.FruitType;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
@@ -12,6 +13,7 @@ import net.minecraft.tags.BlockTags;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
@@ -35,6 +37,9 @@ import java.util.List;
 /**
  * 挂在树叶下面的苹果。对应 1.12.2 的 BlockApplePlant：
  * 8 个成熟阶段，只长在树叶下方，成熟后可以采摘／自然掉落。
+ *
+ * <p>1.21 把空手右键和持物右键拆成了 useWithoutItem / useItemOn 两个入口，
+ * 这里两边都接上原来的采摘逻辑，行为与 1.20.1 版一致。
  */
 public class ApplePlantBlock extends Block implements BonemealableBlock {
 
@@ -55,9 +60,18 @@ public class ApplePlantBlock extends Block implements BonemealableBlock {
 
     private final FruitType fruit;
 
+    /** codec 按实例创建：解码时保留果实品种，金苹果／翡翠的果子不会退化成普通苹果。 */
+    private final MapCodec<ApplePlantBlock> codec;
+
+    @Override
+    public MapCodec<? extends Block> codec() {
+        return this.codec;
+    }
+
     public ApplePlantBlock(FruitType fruit, Properties properties) {
         super(properties);
         this.fruit = fruit;
+        this.codec = simpleCodec(props -> new ApplePlantBlock(fruit, props));
         this.registerDefaultState(this.stateDefinition.any().setValue(AGE, 0));
     }
 
@@ -156,13 +170,30 @@ public class ApplePlantBlock extends Block implements BonemealableBlock {
     // ---- 采摘 ----
 
     @Override
-    public InteractionResult use(BlockState state, Level level, BlockPos pos, Player player,
-                                 InteractionHand hand, BlockHitResult hit) {
+    protected InteractionResult useWithoutItem(BlockState state, Level level, BlockPos pos,
+                                               Player player, BlockHitResult hit) {
+        return this.tryHarvest(state, level, pos, player);
+    }
+
+    @Override
+    protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos,
+                                              Player player, InteractionHand hand, BlockHitResult hit) {
         if (state.getValue(AGE) >= MAX_AGE && AppleConfig.EASY_HARVEST.get()) {
             if (!level.isClientSide) {
                 this.harvest(level, pos, state, level.getRandom());
             }
             // 两边都算"成功"，客户端才知道这次交互被用掉了，不会再去用手里拿的东西。
+            return ItemInteractionResult.sidedSuccess(level.isClientSide);
+        }
+        // 不成熟：交回默认流程，正常放方块／用物品。
+        return ItemInteractionResult.PASS_TO_DEFAULT_BLOCK_INTERACTION;
+    }
+
+    private InteractionResult tryHarvest(BlockState state, Level level, BlockPos pos, Player player) {
+        if (state.getValue(AGE) >= MAX_AGE && AppleConfig.EASY_HARVEST.get()) {
+            if (!level.isClientSide) {
+                this.harvest(level, pos, state, level.getRandom());
+            }
             return InteractionResult.sidedSuccess(level.isClientSide);
         }
         return InteractionResult.PASS;
@@ -191,7 +222,7 @@ public class ApplePlantBlock extends Block implements BonemealableBlock {
     }
 
     @Override
-    public ItemStack getCloneItemStack(BlockGetter level, BlockPos pos, BlockState state) {
+    public ItemStack getCloneItemStack(LevelReader level, BlockPos pos, BlockState state) {
         return new ItemStack(this.fruit.getFruit());
     }
 
@@ -209,7 +240,7 @@ public class ApplePlantBlock extends Block implements BonemealableBlock {
     // ---- 骨粉 ----
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return state.getValue(AGE) < MAX_AGE;
     }
 

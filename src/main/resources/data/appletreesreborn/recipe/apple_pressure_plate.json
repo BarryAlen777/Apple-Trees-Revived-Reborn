@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "P": {
+      "item": "appletreesreborn:apple_planks"
+    }
+  },
+  "pattern": [
+    "PP"
+  ],
+  "result": {
+    "id": "appletreesreborn:apple_pressure_plate"
+  }
+}

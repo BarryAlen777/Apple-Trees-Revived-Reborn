@@ -1,0 +1,52 @@
+{
+  "values": {
+    "appletreesreborn:apple_log": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_wood": {
+      "burn_time": 300
+    },
+    "appletreesreborn:stripped_apple_log": {
+      "burn_time": 300
+    },
+    "appletreesreborn:stripped_apple_wood": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_planks": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_slab": {
+      "burn_time": 150
+    },
+    "appletreesreborn:apple_stairs": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_fence": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_fence_gate": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_door": {
+      "burn_time": 200
+    },
+    "appletreesreborn:apple_trapdoor": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_button": {
+      "burn_time": 100
+    },
+    "appletreesreborn:apple_pressure_plate": {
+      "burn_time": 300
+    },
+    "appletreesreborn:apple_sapling": {
+      "burn_time": 100
+    },
+    "appletreesreborn:gold_apple_sapling": {
+      "burn_time": 100
+    },
+    "appletreesreborn:emerald_apple_sapling": {
+      "burn_time": 100
+    }
+  }
+}

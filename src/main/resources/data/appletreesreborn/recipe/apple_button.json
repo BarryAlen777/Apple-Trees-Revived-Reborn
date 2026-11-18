@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "appletreesreborn:apple_planks"
+    }
+  ],
+  "result": {
+    "id": "appletreesreborn:apple_button"
+  }
+}

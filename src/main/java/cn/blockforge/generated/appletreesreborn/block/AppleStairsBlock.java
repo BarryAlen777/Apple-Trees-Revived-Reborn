@@ -12,6 +12,6 @@ import java.util.function.Supplier;
 public class AppleStairsBlock extends StairBlock implements Flammability.Planks {
 
     public AppleStairsBlock(Supplier<BlockState> baseState, BlockBehaviour.Properties properties) {
-        super(baseState, properties);
+        super(baseState.get(), properties);
     }
 }

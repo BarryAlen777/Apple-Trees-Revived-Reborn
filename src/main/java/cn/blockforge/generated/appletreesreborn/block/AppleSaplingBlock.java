@@ -17,6 +17,7 @@ import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.item.ItemStack;
+import com.mojang.serialization.MapCodec;
 import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
@@ -29,6 +30,16 @@ import java.util.List;
  */
 public class AppleSaplingBlock extends BushBlock implements BonemealableBlock {
 
+    /** 1.21 起 BushBlock 要求每个子类提供自己的 MapCodec（结构与数据修复用）。
+     *  codec 按实例创建：解码出来的方块保留注册时的果实品种，
+     *  金苹果／翡翠树苗不会被反序列化成普通苹果树苗。 */
+    private final MapCodec<AppleSaplingBlock> codec;
+
+    @Override
+    public MapCodec<? extends BushBlock> codec() {
+        return this.codec;
+    }
+
     public static final IntegerProperty STAGE = BlockStateProperties.STAGE;
     private static final VoxelShape SHAPE = Block.box(2.0D, 0.0D, 2.0D, 14.0D, 12.0D, 14.0D);
 
@@ -37,6 +48,7 @@ public class AppleSaplingBlock extends BushBlock implements BonemealableBlock {
     public AppleSaplingBlock(FruitType fruit, Properties properties) {
         super(properties);
         this.fruit = fruit;
+        this.codec = simpleCodec(props -> new AppleSaplingBlock(fruit, props));
         this.registerDefaultState(this.stateDefinition.any().setValue(STAGE, 0));
     }
 
@@ -82,7 +94,7 @@ public class AppleSaplingBlock extends BushBlock implements BonemealableBlock {
     // ---- 骨粉 ----
 
     @Override
-    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state, boolean isClient) {
+    public boolean isValidBonemealTarget(LevelReader level, BlockPos pos, BlockState state) {
         return true;
     }
 

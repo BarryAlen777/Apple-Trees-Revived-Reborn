@@ -1,0 +1,16 @@
+{
+  "values": {
+    "appletreesreborn:apple_leaves": {
+      "chance": 0.3
+    },
+    "appletreesreborn:apple_sapling": {
+      "chance": 0.3
+    },
+    "appletreesreborn:gold_apple_sapling": {
+      "chance": 0.7
+    },
+    "appletreesreborn:emerald_apple_sapling": {
+      "chance": 1.0
+    }
+  }
+}

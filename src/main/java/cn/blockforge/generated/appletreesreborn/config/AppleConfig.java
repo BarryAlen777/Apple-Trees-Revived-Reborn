@@ -1,20 +1,20 @@
 package cn.blockforge.generated.appletreesreborn.config;
 
-import net.minecraftforge.common.ForgeConfigSpec;
-import net.minecraftforge.common.ForgeConfigSpec.BooleanValue;
-import net.minecraftforge.common.ForgeConfigSpec.DoubleValue;
-import net.minecraftforge.common.ForgeConfigSpec.IntValue;
+import net.neoforged.neoforge.common.ModConfigSpec;
+import net.neoforged.neoforge.common.ModConfigSpec.BooleanValue;
+import net.neoforged.neoforge.common.ModConfigSpec.DoubleValue;
+import net.neoforged.neoforge.common.ModConfigSpec.IntValue;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
  * 模组的可配置项（生成率、掉落率、食物效果、是否自然生成等）。
- * 全部走 Forge 的 COMMON 配置，改完在 config/appletreesreborn-common.toml 里能直接看到。
+ * 全部走 NeoForge 的 COMMON 配置，改完在 config/appletreesreborn-common.toml 里能直接看到。
  */
 public final class AppleConfig {
 
-    public static final ForgeConfigSpec SPEC;
+    public static final ModConfigSpec SPEC;
 
     // ---- 世界生成 ----
     public static final BooleanValue NATURAL_GENERATION;
@@ -49,7 +49,7 @@ public final class AppleConfig {
     public static final Map<String, BooleanValue> CONDITION_KEYS = new HashMap<>();
 
     static {
-        ForgeConfigSpec.Builder b = new ForgeConfigSpec.Builder();
+        ModConfigSpec.Builder b = new ModConfigSpec.Builder();
 
         b.comment("自然生成设置 / Natural world generation").push("worldgen");
         NATURAL_GENERATION = b.comment("是否让苹果树自然生成在世界里。")
